@@ -10,6 +10,11 @@ from todos.serializers import TodoSerializer
 class TodoList(generics.ListAPIView):
 	queryset = Todo.objects.all()
 	serializers_class = TodoSerializer
+	
+	def list(self, request):
+		queryset = self.get_queryset()
+		serializer = TodoSerializer(queryset, many=True)
+		return Response(serializer.data)
 
 	def perform_create(self, serializer):
 		serializer.save(user=self.request.user)
