@@ -10,6 +10,11 @@ from users.serializers import UserSerializer
 class UserList(generics.ListAPIView):
 	queryset = User.objects.all()
 	serializers_class = UserSerializer
+	
+	def list(self, request):
+		queryset = self.get_queryset()
+		serializer = UserSerializer(queryset, many=True)
+		return Response(serializer.data)
 
 	class UserDetail(generics.RetrieveUpdateDestroyAPIView):
 		serializers_class = UserSerializer
