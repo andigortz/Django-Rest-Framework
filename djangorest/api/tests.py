@@ -1,6 +1,5 @@
 from django.test import TestCase
 from .models import UserList
-
 from rest_framework import APIClient
 from rest_framework import status
 from django.reverse import reverse
