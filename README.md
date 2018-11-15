@@ -26,3 +26,7 @@
 5. Start server `python manage.py runserver`
 6. Open up in browser or using httpie `pip install httpie`
 7. Finish and feel free to explore the codes
+
+# Contribute
+
+-if you want to contribute or discover a bug just send a pull request :)
