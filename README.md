@@ -12,6 +12,8 @@
 
 -Request and Response is one of the main core of Django Rest Framework. Request objects similar to the regular `HttpResponse` but more flexible and works well with web API, meanwhile Response uses to determine the correct/wrong content that return to client (command execute in browser use `http://127.0.0.1:8000/todos`)
 
+-Class based views is more powerful rather than using function based views. This patterns allow us to reuse common functionality, make easier to code and reducing repetition of code patterns (command execute in browser use `http://127.0.0.1:8000/todos` if you want to post a data and want to check it, use `http://127.0.0.1:8000/todos/1`)
+
 # Bug
 -Minor bug in djangorest 
 
@@ -31,6 +33,11 @@
 5. Start server `python manage.py runserver`
 6. Open up in browser or using httpie
 7. Finish and feel free to explore the codes
+
+# Future Development
+1. Added mixings and generic class-based views on Class Based Views API
+2. Register admin
+3. Customizable django rest framework dashboard
 
 # Contribute
 -if you want to contribute or discover a bug just send a pull request :)
