@@ -14,6 +14,8 @@
 
 -Class based views is more powerful rather than using function based views. This patterns allow us to reuse common functionality, make easier to code and reducing repetition of code patterns (command execute in browser use `http://127.0.0.1:8000/todos` if you want to post a data and want to check it, use `http://127.0.0.1:8000/todos/1`)
 
+-Authentication in django is useful for to a create restrictions on who can edit or delete in our API. this is like some more advance behaviour to make our API like : our code always associated with creator, only authenticate user can perform crud, unauthenticated user may should ask permissions to grant full access.
+
 # Bug
 -Minor bug in djangorest 
 
@@ -35,9 +37,10 @@
 7. Finish and feel free to explore the codes
 
 # Future Development
-1. Added mixings and generic class-based views on Class Based Views API
+1. Added mixings and generic class-based views on ***Class Based Views API***
 2. Register admin
 3. Customizable django rest framework dashboard
+4. Adding permissions to viewers on ***Authentication***
 
 # Contribute
 -if you want to contribute or discover a bug just send a pull request :)
