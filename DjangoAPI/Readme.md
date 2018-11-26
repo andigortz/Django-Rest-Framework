@@ -49,7 +49,11 @@ snippet in web API **not** in django administrator, meanwhile admin can't delete
 **Error**
 1. So far, i got some error if user want to post a data in django administrator. I think it's because i didn't delete the database before and got
 error `OperationalError at snippet/admin/`. The point is, when we will test our API for the first time, we create a superuser named Admin, and after the testings it's working,
-we should remove the database and then make migrations to snippet and create 2 superuser for Admin and User again.
+we should remove the database and then make migrations to snippet and create 2 superuser for Admin and User again. (**fixed**)
 2. The second error is `ImproperlyConfigured/user`, this happen (for my case) because when we will post a data we can choose that data belongs to user or the admin.
 The functions is working but because i didn't delete database before so it's not working either LOL
 3. If there is anyone that willing to help me, just send a pull request
+
+**Error Handling**
+1. So, recently i have found a way to overcome the first error. I'm still not sure 100% if this completely fixed but i think so far so good. You just removed the previous database `db.sqlite3` and then delete all files in folder migrations except `__init__.py`, after that make a migrations for snippet `py manage.py makemigrations snippet` and run `py manage.py migrate`.At this point, create 2 super user again (user and admin) and open in browser `http://127.0.0.1:8000/admin` try to add data in Snippet then take a look in browsable API `http://127.0.0.1:8000/snippet/`
+`
