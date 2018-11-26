@@ -16,8 +16,10 @@
 
 -Authentication in django is useful for to a create restrictions on who can edit or delete in our API. this is like some more advance behaviour to make our API like : our code always associated with creator, only authenticate user can perform crud, unauthenticated user may should ask permissions to grant full access. (browsable API in browser use `http://127.0.0.1:8000/api/`, if you want to post a data, first login to admin system and add data in todos then use `http://127.0.0.1:8000/api/v1`, meanwhile if you want to test User Authentication you should migrate todos changes and server first `py manage.py migrate`. working login endpoint execute ` http://127.0.0.1:8000/api/v1/rest-auth/login/`, and logout endpoit ` http://127.0.0.1:8000/api/v1/rest-auth/logout/`.
 
+-***DjangoAPI*** is the complete and final step for Django Rest Framework. Just check it out in the directory so you can read the documentation.
+
 # Bug
--Minor bug in djangorest 
+-Minor bug in djangorest (**fixed**)
 
 # Requirements
 1. Python version 3.5 or higher
