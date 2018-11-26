@@ -23,8 +23,7 @@ class ViewTestCase(TestCase):
         self.response = self.client.post(
         reverse('create'),
         self.userlist_data,
-        format="json"
-        )
+        format="json")
 
     def testCreate(self):
         self.assertEqual(self.response.status_code, status.HTTP_402_CREATED)
