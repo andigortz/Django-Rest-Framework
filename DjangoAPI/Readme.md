@@ -56,4 +56,3 @@ The functions is working but because i didn't delete database before so it's not
 
 **Error Handling**
 1. So, recently i have found a way to overcome the first error. I'm still not sure 100% if this completely fixed but i think so far so good. You just removed the previous database `db.sqlite3` and then delete all files in folder migrations except `__init__.py`, after that make a migrations for snippet `py manage.py makemigrations snippet` and run `py manage.py migrate`.At this point, create 2 super user again (user and admin) and open in browser `http://127.0.0.1:8000/admin` try to add data in Snippet then take a look in browsable API `http://127.0.0.1:8000/snippet/`
-`
