@@ -25,7 +25,8 @@ snippet in web API **not** in django administrator, meanwhile admin can't delete
 7. And then change directory `cd <this repository>`
 8. Make a migrations first `py manage.py migrate`
 9. Optionaly, test the project if an error occurs `py manage.py test`
-10. Run the project using `py manage.py runserver` and open up in browser `http://127.0.0.1:8000/snippet/` 
+10. Run the project using `py manage.py runserver` and open up in browser `http://127.0.0.1:8000/`
+11. In browsable API there's a 2 options, `User` and `Snippet` choose as you wish and then you can add snippet code in there
 
 **Test the API**
 1. Create a superuser first `py manage.py createsuperuser`
@@ -37,8 +38,8 @@ snippet in web API **not** in django administrator, meanwhile admin can't delete
 1. Serializers (**done**)
 2. Request and Response (**done**)
 3. Authenticate (**done**)
-4. Permissions (on progress)
-5. Hyperlinked Relationship (not yet)
+4. Permissions (**done**)
+5. Hyperlinked Relationship (on progress)
 6. Pagination (not yet)
 7. User Libraries (not yet)
 8. Multiple Authenticate (not yet)
@@ -52,7 +53,8 @@ error `OperationalError at snippet/admin/`. The point is, when we will test our 
 we should remove the database and then make migrations to snippet and create 2 superuser for Admin and User again. (**fixed**)
 2. The second error is `ImproperlyConfigured/user`, this happen (for my case) because when we will post a data we can choose that data belongs to user or the admin.
 The functions is working but because i didn't delete database before so it's not working either LOL
-3. If there is anyone that willing to help me, just send a pull request
+3. Currently, CRUD in browsable API it's not showing so you must manually add a data in django administrator. (updated)
+4. If there is anyone that willing to help me, just send a pull request
 
 **Error Handling**
 1. So, recently i have found a way to overcome the first error. I'm still not sure 100% if this completely fixed but i think so far so good. You just removed the previous database `db.sqlite3` and then delete all files in folder migrations except `__init__.py`, after that make a migrations for snippet `py manage.py makemigrations snippet` and run `py manage.py migrate`.At this point, create 2 super user again (user and admin) and open in browser `http://127.0.0.1:8000/admin` try to add data in Snippet then take a look in browsable API `http://127.0.0.1:8000/snippet/`
