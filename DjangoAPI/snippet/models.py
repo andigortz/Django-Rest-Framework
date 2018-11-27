@@ -2,7 +2,7 @@ from django.db import models
 from pygments.lexers import get_all_lexers, get_lexer_by_name
 from pygments.styles import get_all_styles
 from pygments import highlight
-from pygments.formatters import HtmlFormatter
+from pygments.formatters.html import HtmlFormatter
 
 
 # Create your models here.
@@ -11,21 +11,18 @@ LANGUAGE_CHOICES = sorted([(item[1][0], item[0]) for item in LEXERS])
 STYLE_CHOICES = sorted((item, item) for item in get_all_styles())
 
 class Snippet(models.Model):
-    title = models.CharField(max_length=255, blank=False, unique=True, null=False)
+    title = models.CharField(max_length=255, blank=True, unique=True, null=False, default='')
     code = models.TextField()
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
     linenos = models.BooleanField(default=False)
     language = models.CharField(choices=LANGUAGE_CHOICES, default='python', max_length=100)
     style = models.CharField(choices=STYLE_CHOICES, default='friendly', max_length=150)
-    owner = models.ForeignKey('auth.User', related_name = 'snippet', on_delete=models.CASCADE)
+    owner = models.ForeignKey('auth.User', related_name='snippet', on_delete=models.CASCADE)
     highlighted = models.TextField()
 
     class Meta:
         ordering = ('created',)
-
-    def __str__(self):
-        return self.title
 
     def save(self, *args, **kwargs):
         lexer = get_lexer_by_name(self.language)
@@ -34,3 +31,6 @@ class Snippet(models.Model):
         formatter = HtmlFormatter(style=self.style, linenos=linenos, full=True, **options)
         self.highlighted = highlight(self.code, lexer, formatter)
         super(Snippet, self).save(*args, **kwargs)
+
+    def __str__(self):
+        return self.title

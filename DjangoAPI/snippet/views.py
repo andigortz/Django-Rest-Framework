@@ -9,6 +9,14 @@ from rest_framework.reverse import reverse
 
 
 # Create your views here.
+
+@api_view(['GET'])
+def api_root_point(request, format=None):
+    return Response({
+        'user': reverse('user-list', request=request, format=format),
+        'snippet': reverse('snippet-list', request=request, format=format)
+    })
+
 class SnippetList(generics.ListAPIView):
     queryset = Snippet.objects.all()
     serializer_class = SnippetSerializer
@@ -29,10 +37,3 @@ class UserList(generics.ListAPIView):
 class UserDetail(generics.RetrieveAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
-
-@api_view(['GET'])
-def api_root_point(request, format=None):
-    return Response({
-    'user': reverse('user-list', request=request, format=format),
-    'snippet': reverse('snippet-list', request=request, format=format)
-    })
