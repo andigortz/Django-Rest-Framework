@@ -1,5 +1,5 @@
 from django.contrib.auth.models import User
-from rest_framework import generics, permissions
+from rest_framework import generics, permissions, renderers
 from .models import Snippet
 from .serializers import SnippetSerializer, UserSerializer
 from .permissions import IsOwnerOrReadOnly
@@ -13,7 +13,7 @@ from rest_framework.reverse import reverse
 @api_view(['GET'])
 def api_root_point(request, format=None):
     return Response({
-        'user': reverse('user-list', request=request, format=format),
+        'User': reverse('user-list', request=request, format=format),
         'snippet': reverse('snippet-list', request=request, format=format)
     })
 
@@ -29,6 +29,15 @@ class SnippetDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Snippet.objects.all()
     serializer_class = SnippetSerializer
     permission_classes = (permissions.IsAuthenticatedOrReadOnly, IsOwnerOrReadOnly,)
+
+class SnippetHighlight(generics.GenericAPIView):
+    queryset = Snippet.objects.all()
+    renderer_classes = (renderers.StaticHTMLRenderer,)
+
+    def get(self, request, *args, **kwargs):
+        snippet = self.get_object()
+        return Response(snippet.highlighted)
+
 
 class UserList(generics.ListAPIView):
     queryset = User.objects.all()
