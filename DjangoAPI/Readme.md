@@ -44,6 +44,14 @@ snippet in web API **not** in django administrator, meanwhile admin can't delete
 7. User Libraries (not yet)
 8. Multiple Authenticate (not yet)
 
+**Note**
+1. For pagination is simple to use, go thoroughly in `DjangoAPI/settings.py` and then add : 
+
+    `REST_FRAMEWORK = {
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 10
+    }`
+
 **Explanations**
 1. (I'll Added Later)
 
