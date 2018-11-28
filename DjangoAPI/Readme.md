@@ -39,7 +39,7 @@ snippet in web API **not** in django administrator, meanwhile admin can't delete
 2. Request and Response (**done**)
 3. Authenticate (**done**)
 4. Permissions (**done**)
-5. Hyperlinked Relationship (on progress)
+5. Hyperlinked Relationship (**done**)
 6. Pagination (not yet)
 7. User Libraries (not yet)
 8. Multiple Authenticate (not yet)
@@ -53,7 +53,8 @@ error `OperationalError at snippet/admin/`. The point is, when we will test our 
 we should remove the database and then make migrations to snippet and create 2 superuser for Admin and User again. (**fixed**)
 2. The second error is `ImproperlyConfigured/user`, this happen (for my case) because when we will post a data we can choose that data belongs to user or the admin.
 The functions is working but because i didn't delete database before so it's not working either LOL
-3. Currently, CRUD in browsable API it's not showing so you must manually add a data in django administrator. (updated)
+3. Currently, CRUD in browsable API it's not showing so you must manually add a data in django administrator. (*updated*)
+4. Hyperlinked relationship it's not working, i believe there's a incorrect configured in `lookup_field`
 4. If there is anyone that willing to help me, just send a pull request
 
 **Error Handling**
