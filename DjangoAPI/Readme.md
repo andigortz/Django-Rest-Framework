@@ -40,7 +40,7 @@ snippet in web API **not** in django administrator, meanwhile admin can't delete
 3. Authenticate (**done**)
 4. Permissions (**done**)
 5. Hyperlinked Relationship (**done**)
-6. Pagination (not yet)
+6. Pagination (**done**)
 7. User Libraries (not yet)
 8. Multiple Authenticate (not yet)
 
