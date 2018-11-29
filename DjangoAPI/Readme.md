@@ -27,6 +27,8 @@ snippet in web API **not** in django administrator, meanwhile admin can't delete
 9. Optionaly, test the project if an error occurs `py manage.py test`
 10. Run the project using `py manage.py runserver` and open up in browser `http://127.0.0.1:8000/`
 11. In browsable API there's a 2 options, `User` and `Snippet` choose as you wish and then you can add snippet code in there
+12. Before using schema, install the dependencies on your terminal `pip install coreapi pyyaml`
+13. And then open up in browser with `http://127.0.0.1:8000/schema/` and there's auto-generated documentation about our snippet
 
 **Test the API**
 1. Create a superuser first `py manage.py createsuperuser`
@@ -41,7 +43,7 @@ snippet in web API **not** in django administrator, meanwhile admin can't delete
 4. Permissions (**done**)
 5. Hyperlinked Relationship (**done**)
 6. Pagination (**done**)
-7. User Libraries (not yet)
+7. User Libraries (**on progress**)
 8. Multiple Authenticate (not yet)
 
 **Note**
