@@ -13,7 +13,7 @@ urlpatterns = [
     url(r'^snippet/<int:pk>/highlight/', views.SnippetHighlight.as_view(), name='snippet-highlight'),
     url(r'^user/', views.UserList.as_view(), name='user-list'),
     url(r'^user/<int:pk>/', views.UserDetail.as_view(), name='user-detail'),
-    url(r'', views.api_root_point),
+    url(r'', views.api_root),
 
 ]
 
