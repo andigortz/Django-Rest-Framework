@@ -11,13 +11,13 @@ from rest_framework.reverse import reverse
 # Create your views here.
 
 @api_view(['GET'])
-def api_root_point(request, format=None):
+def api_root(request, format=None):
     return Response({
-        'User': reverse('user-list', request=request, format=format),
+        'user': reverse('user-list', request=request, format=format),
         'snippet': reverse('snippet-list', request=request, format=format)
     })
 
-class SnippetList(generics.ListAPIView):
+class SnippetList(generics.ListCreateAPIView):
     queryset = Snippet.objects.all()
     serializer_class = SnippetSerializer
     permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
@@ -28,7 +28,7 @@ class SnippetList(generics.ListAPIView):
 class SnippetDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Snippet.objects.all()
     serializer_class = SnippetSerializer
-    permission_classes = (permissions.IsAuthenticatedOrReadOnly, IsOwnerOrReadOnly,)
+    permission_classes = (permissions.IsAuthenticatedOrReadOnly, IsOwnerOrReadOnly)
 
 class SnippetHighlight(generics.GenericAPIView):
     queryset = Snippet.objects.all()
@@ -37,7 +37,6 @@ class SnippetHighlight(generics.GenericAPIView):
     def get(self, request, *args, **kwargs):
         snippet = self.get_object()
         return Response(snippet.highlighted)
-
 
 class UserList(generics.ListAPIView):
     queryset = User.objects.all()
