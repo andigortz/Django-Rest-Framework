@@ -63,8 +63,8 @@ error `OperationalError at snippet/admin/`. The point is, when we will test our 
 we should remove the database and then make migrations to snippet and create 2 superuser for Admin and User again. (**fixed**)
 2. The second error is `ImproperlyConfigured/user`, this happen (for my case) because when we will post a data we can choose that data belongs to user or the admin.
 The functions is working but because i didn't delete database before so it's not working either LOL
-3. Currently, CRUD in browsable API it's not showing so you must manually add a data in django administrator. (*updated*)
-4. Hyperlinked relationship it's not working, i believe there's a incorrect configured in `lookup_field`
+3. Currently, CRUD in browsable API it's not showing so you must manually add a data in django administrator. (**fixed**)
+4. Hyperlinked relationship it's not working, i believe there's a incorrect configured in `lookup_field` (**fixed**)
 4. If there is anyone that willing to help me, just send a pull request
 
 **Error Handling**
