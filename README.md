@@ -12,7 +12,8 @@
 
 -Request and Response is one of the main core of Django Rest Framework. Request objects similar to the regular `HttpResponse` but more flexible and works well with web API, meanwhile Response uses to determine the correct/wrong content that return to client (command execute in browser use `http://127.0.0.1:8000/todos`)
 
--Class based views is more powerful rather than using function based views. This patterns allow us to reuse common functionality, make easier to code and reducing repetition of code patterns (command execute in browser use `http://127.0.0.1:8000/todos` if you want to post a data and want to check it, use `http://127.0.0.1:8000/todos/1`)
+-Class based views is more powerful rather than using function based views. This patterns allow us to reuse common functionality, make easier to code and reducing repetition of code patterns (command execute in browser use `http://127.0.0.1:8000/todos` if you want to post a data and want to check it, use `http://127.0.0.1:8000/todos/1`). 
+**Note: if you want to use mixing class-based views, route the urls first in todos.urls**
 
 -Authentication in django is useful for to a create restrictions on who can edit or delete in our API. this is like some more advance behaviour to make our API like : our code always associated with creator, only authenticate user can perform crud, unauthenticated user may should ask permissions to grant full access. (browsable API in browser use `http://127.0.0.1:8000/api/`, if you want to post a data, first login to admin system and add data in todos then use `http://127.0.0.1:8000/api/v1`, meanwhile if you want to test User Authentication you should migrate todos changes and server first `py manage.py migrate`. working login endpoint execute ` http://127.0.0.1:8000/api/v1/rest-auth/login/`, and logout endpoit ` http://127.0.0.1:8000/api/v1/rest-auth/logout/`.
 
@@ -39,7 +40,7 @@
 7. Finish and feel free to explore the codes
 
 # Future Development
-1. Added mixings and generic class-based views on ***Class Based Views API***
+1. Added mixings and generic class-based views on ***Class Based Views API*** (on progress)
 2. Register admin (done)
 3. Customizable django rest framework dashboard
 4. Adding permissions to viewers on ***Authentication*** (done)
