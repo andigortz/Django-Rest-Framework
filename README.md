@@ -40,7 +40,7 @@
 7. Finish and feel free to explore the codes
 
 # Future Development
-1. Added mixings and generic class-based views on ***Class Based Views API*** (on progress)
+1. Added mixings and generic class-based views on ***Class Based Views API*** (done)
 2. Register admin (done)
 3. Customizable django rest framework dashboard
 4. Adding permissions to viewers on ***Authentication*** (done)
