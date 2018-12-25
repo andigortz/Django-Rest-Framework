@@ -4,23 +4,23 @@
                                                                                                                                       
 # Django Rest Framework
 
--RestfulAPI is simple implementation of Django Rest Framework (DRF) with only User & Todos (you can't have override method likes Update, Delete, Put or Create)
+- RestfulAPI is simple implementation of Django Rest Framework (DRF) with only User & Todos (you can't have override method likes Update, Delete, Put or Create)
 
--Djangorest is one example of a form of test driven approach with features such as CRUD and customizable administrator (you must create a superuser first if you wanna to try admin dashboard)
+- Djangorest is one example of a form of test driven approach with features such as CRUD and customizable administrator (you must create a superuser first if you wanna to try admin dashboard)
 
--Serialization focusing to create a simple API web and give comprehensive features to understanding Django Rest Framework on based serializers views (command execute in browser use `http://127.0.0.1:8000/todos`)
+- Serialization focusing to create a simple API web and give comprehensive features to understanding Django Rest Framework on based serializers views (command execute in browser use `http://127.0.0.1:8000/todos`)
 
--Request and Response is one of the main core of Django Rest Framework. Request objects similar to the regular `HttpResponse` but more flexible and works well with web API, meanwhile Response uses to determine the correct/wrong content that return to client (command execute in browser use `http://127.0.0.1:8000/todos`)
+- Request and Response is one of the main core of Django Rest Framework. Request objects similar to the regular `HttpResponse` but more flexible and works well with web API, meanwhile Response uses to determine the correct/wrong content that return to client (command execute in browser use `http://127.0.0.1:8000/todos`)
 
--Class based views is more powerful rather than using function based views. This patterns allow us to reuse common functionality, make easier to code and reducing repetition of code patterns (command execute in browser use `http://127.0.0.1:8000/todos` if you want to post a data and want to check it, use `http://127.0.0.1:8000/todos/1`). 
+- Class based views is more powerful rather than using function based views. This patterns allow us to reuse common functionality, make easier to code and reducing repetition of code patterns (command execute in browser use `http://127.0.0.1:8000/todos` if you want to post a data and want to check it, use `http://127.0.0.1:8000/todos/1`). 
 **Note: if you want to use mixing class-based or generic based-class views, route the urls first in todos.urls**
 
--Authentication in django is useful for to a create restrictions on who can edit or delete in our API. this is like some more advance behaviour to make our API like : our code always associated with creator, only authenticate user can perform crud, unauthenticated user may should ask permissions to grant full access. (browsable API in browser use `http://127.0.0.1:8000/api/`, if you want to post a data, first login to admin system and add data in todos then use `http://127.0.0.1:8000/api/v1`, meanwhile if you want to test User Authentication you should migrate todos changes and server first `py manage.py migrate`. working login endpoint execute ` http://127.0.0.1:8000/api/v1/rest-auth/login/`, and logout endpoit ` http://127.0.0.1:8000/api/v1/rest-auth/logout/`.
+- Authentication in django is useful for to a create restrictions on who can edit or delete in our API. this is like some more advance behaviour to make our API like : our code always associated with creator, only authenticate user can perform crud, unauthenticated user may should ask permissions to grant full access. (browsable API in browser use `http://127.0.0.1:8000/api/`, if you want to post a data, first login to admin system and add data in todos then use `http://127.0.0.1:8000/api/v1`, meanwhile if you want to test User Authentication you should migrate todos changes and server first `py manage.py migrate`. working login endpoint execute ` http://127.0.0.1:8000/api/v1/rest-auth/login/`, and logout endpoit ` http://127.0.0.1:8000/api/v1/rest-auth/logout/`.
 
--***DjangoAPI*** is the complete and final step for Django Rest Framework. Just check it out in the directory so you can read the documentation.
+- ***DjangoAPI*** is the complete and final step for Django Rest Framework. Just check it out in the directory so you can read the documentation.
 
 # Bug
--Minor bug in djangorest (**fixed**)
+- Minor bug in djangorest (**fixed**)
 
 # Requirements
 1. Python version 3.5 or higher
@@ -46,4 +46,4 @@
 4. Adding permissions to viewers on ***Authentication*** (done)
 
 # Contribute
--if you want to contribute or discover a bug just send a pull request :)
+- if you want to contribute or discover a bug just send a pull request :)
